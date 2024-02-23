@@ -11,7 +11,7 @@ def index():
 @app.route("/api/v1/<word>")
 def meaning(word):
     df = pd.read_csv("dictionary.csv")
-    meaning = df.loc[df['word']=="facing"]['definition'].squeeze()
+    meaning = df.loc[df['word']==word]['definition'].squeeze()
     return {"Meaning": meaning,
             "word": word}
 
